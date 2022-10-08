@@ -10,8 +10,8 @@
 		<Copyright>Copyright Mt-Rele 1993 – 2022.</Copyright>
 		<NeutralLanguage>ru-RU</NeutralLanguage>
 		<RepositoryType>git</RepositoryType>
-		<RepositoryUrl>https://github.com/g-aa/mt-utilities</RepositoryUrl>
-		<PackageProjectUrl>https://github.com/g-aa/mt-utilities</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/g-aa/mt-results</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/g-aa/mt-results</PackageProjectUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageIcon>iconMt.png</PackageIcon>
 		<Build_Version Condition=" '$(Build_Version)' == '' ">6.0.0</Build_Version>
