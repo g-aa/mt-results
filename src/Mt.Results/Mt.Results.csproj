@@ -1,5 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
-	
+
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
 		<PackageId>Mt.Results</PackageId>
@@ -11,14 +11,14 @@
     </PropertyGroup>
 
 	<ItemGroup>
-		<None Include="..\README.md">
+		<None Include="..\..\README.md">
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
 		</None>
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="..\iconMt.png">
+		<None Include="..\..\iconMt.png">
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
 		</None>
@@ -26,6 +26,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Mt.Utilities" Version="6.1.1" />
+		<PackageReference Include="System.Text.Json" Version="6.0.6" />
 	</ItemGroup>
 
 </Project>

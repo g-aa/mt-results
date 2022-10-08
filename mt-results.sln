@@ -11,11 +11,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{523598CA-8
 		Directory.Build.props = Directory.Build.props
 		iconMt.png = iconMt.png
 		iconNet.png = iconNet.png
+		mt-results-di.snk = mt-results-di.snk
 		mt-results.snk = mt-results.snk
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mt.Results", "Mt.Results\Mt.Results.csproj", "{07610C8C-7CF7-4518-A213-A1CA81E6331C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{929F7D53-7831-4AF6-8383-0FF63E927EC3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{862B4F07-2079-40B7-921F-621A7FCC3D33}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mt.Results", "src\Mt.Results\Mt.Results.csproj", "{07610C8C-7CF7-4518-A213-A1CA81E6331C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mt.Results.DependencyInjection", "src\Mt.Results.DependencyInjection\Mt.Results.DependencyInjection.csproj", "{81C6DD47-810E-4906-BEDD-B4162C84F477}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mt.Results.Test", "tests\Mt.Results.Test\Mt.Results.Test.csproj", "{FC2D079A-3028-429E-A0A9-1207354FE21C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +36,22 @@ Global
 		{07610C8C-7CF7-4518-A213-A1CA81E6331C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07610C8C-7CF7-4518-A213-A1CA81E6331C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07610C8C-7CF7-4518-A213-A1CA81E6331C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81C6DD47-810E-4906-BEDD-B4162C84F477}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81C6DD47-810E-4906-BEDD-B4162C84F477}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81C6DD47-810E-4906-BEDD-B4162C84F477}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81C6DD47-810E-4906-BEDD-B4162C84F477}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC2D079A-3028-429E-A0A9-1207354FE21C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC2D079A-3028-429E-A0A9-1207354FE21C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC2D079A-3028-429E-A0A9-1207354FE21C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC2D079A-3028-429E-A0A9-1207354FE21C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{07610C8C-7CF7-4518-A213-A1CA81E6331C} = {929F7D53-7831-4AF6-8383-0FF63E927EC3}
+		{81C6DD47-810E-4906-BEDD-B4162C84F477} = {929F7D53-7831-4AF6-8383-0FF63E927EC3}
+		{FC2D079A-3028-429E-A0A9-1207354FE21C} = {862B4F07-2079-40B7-921F-621A7FCC3D33}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0272DEDD-5C77-4A3B-A8DF-7A0C4736C8CD}

@@ -6,9 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [6.0.0] - 2022-10-06
+## [6.0.0] - 2022-10-08
 ### Добавлено
 - MT-0008: Реализация базового функционал пакета MT.Results;
+- MT-0008: Добавленрие классов результатов MtMessageResult, MtProblemDetails;
+- MT-0008: Добавление стандартной фибрики результатов для IMtResultFactory;
 
 ### Изменено
 - -//-
