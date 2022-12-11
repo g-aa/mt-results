@@ -15,12 +15,14 @@ namespace Mt.Results
         /// <summary>
         /// Заголовок (код ошибки).
         /// </summary>
+        /// <example>MT-XXXX</example>
         [JsonPropertyName("title")]
         public string Title { get; private set; }
 
         /// <summary>
         /// Описание ошибки.
         /// </summary>
+        /// <example>Краткое описание ошибки...</example>
         [JsonPropertyName("desc")]
         public string Description { get; private set; }
 

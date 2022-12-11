@@ -1,25 +1,29 @@
-﻿using System.Text.Json.Serialization;
+﻿using Mt.Utilities;
+using System;
+using System.Text.Json.Serialization;
 
 namespace Mt.Results
 {
     /// <summary>
     /// Формат сообщения.
     /// </summary>
+    [Serializable]
     public class MtMessageResult
     {
         /// <summary>
         /// Сообщение.
         /// </summary>
+        /// <example>Текст сообщения...</example>
         [JsonPropertyName("message")]
         public string Message { get; private set; }
 
         /// <summary>
         /// Инициализация экземпляра класса <see cref="MtMessageResult"/>.
         /// </summary>
-        /// <param name="message"></param>
+        /// <param name="message">Текст сообщения.</param>
         public MtMessageResult(string message)
         {
-            this.Message = string.IsNullOrWhiteSpace(message) ? "successfully" : message;
+            this.Message = Check.NotEmpty(message, nameof(message));
         }
 
         /// <inheritdoc />

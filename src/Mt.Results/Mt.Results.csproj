@@ -6,7 +6,7 @@
 		<PackageTags>Mt;Net;Utilities;Results;</PackageTags>
 		<Description>Стандартные ответы результатов операций используемые в проектах Mt Rele.</Description>
 		<AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)mt-results.snk</AssemblyOriginatorKeyFile>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
 
@@ -25,8 +25,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Mt.Utilities" Version="6.1.1" />
-		<PackageReference Include="System.Text.Json" Version="6.0.6" />
+		<PackageReference Include="Mt.Utilities" Version="6.2.0" />
+		<PackageReference Include="System.Text.Json" Version="7.0.0" />
 	</ItemGroup>
 
 </Project>
