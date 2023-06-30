@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [6.2.1] - 2023-07-01
+
+### Изменено
+
+- MT-0011: Исправление линков в Changelog;
+
+
 ## [6.2.0] - 2023-06-30
 
 ### Изменено
@@ -42,7 +49,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - MT-0008: Добавление классов результатов MtMessageResult, MtProblemDetails;
 - MT-0008: Добавление стандартной фибрики результатов для IMtResultFactory;
 
-[Unreleased]: https://github.com/g-aa/mt-results/compare/release-v6.2.0...main
+[Unreleased]: https://github.com/g-aa/mt-results/compare/release-v6.2.1...main
+[6.2.1]: https://github.com/g-aa/mt-results/compare/release-v6.2.0...release-v6.2.1
 [6.2.0]: https://github.com/g-aa/mt-results/compare/release-v6.1.0...release-v6.2.0
 [6.1.0]: https://github.com/g-aa/mt-results/compare/release-v6.0.0...release-v6.1.0
 [6.0.0]: https://github.com/g-aa/mt-results/releases/tag/release-v6.0.0
