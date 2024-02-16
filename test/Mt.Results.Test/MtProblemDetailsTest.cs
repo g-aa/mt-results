@@ -19,7 +19,7 @@ public sealed class MtProblemDetailsTest
         var details = new MtProblemDetails();
 
         // assert
-        Assert.That(details.ToString(), Is.EqualTo(expected));
+        details.ToString().Should().Be(expected);
     }
 
     /// <summary>
@@ -35,7 +35,7 @@ public sealed class MtProblemDetailsTest
         var details = new MtProblemDetails(code);
 
         // assert
-        Assert.That(details.ToString(), Is.EqualTo(expected));
+        details.ToString().Should().Be(expected);
     }
 
     /// <summary>
@@ -57,12 +57,9 @@ public sealed class MtProblemDetailsTest
         var details = new MtProblemDetails(exception);
 
         // assert
-        Assert.Multiple(() =>
-        {
-            Assert.That(details.ToString(), Is.EqualTo(expected));
-            Assert.That(details.Title, Is.EqualTo(exception.Title));
-            Assert.That(details.Description, Is.EqualTo(exception.Desc));
-        });
+        details.ToString().Should().Be(expected);
+        details.Title.Should().Be(exception.Title);
+        details.Description.Should().Be(exception.Desc);
     }
 
     /// <summary>
@@ -78,39 +75,6 @@ public sealed class MtProblemDetailsTest
         var details = new MtProblemDetails(title, description);
 
         // assert
-        Assert.That(details.ToString(), Is.EqualTo(expected));
-    }
-
-    /// <summary>
-    /// Отрицательный тест для <see cref="MtProblemDetails(string, string)"/>.
-    /// </summary>
-    /// <param name="title">Заголовок.</param>
-    /// <param name="description">Описание.</param>
-    /// <param name="expected">Ожидаемый результат.</param>
-    [TestCase(null, null, typeof(ArgumentNullException))]
-    [TestCase("title", null, typeof(ArgumentNullException))]
-    [TestCase(null, "description", typeof(ArgumentNullException))]
-    public void ConstructorNegativeTest(string title, string description, Type expected)
-    {
-        // act
-        var ex = Assert.Catch(() => new MtProblemDetails(title, description));
-
-        // assert
-        Assert.That(ex.GetType().Name, Is.EqualTo(expected.Name));
-    }
-
-    /// <summary>
-    /// Отрицательный тест для конструктора <see cref="MtProblemDetails(MtBaseException)"/>.
-    /// </summary>
-    /// <param name="exception">Исключение.</param>
-    /// <param name="expected">Ожидаемый результат.</param>
-    [TestCase(null, typeof(ArgumentNullException))]
-    public void ConstructorNegativeTest(MtException exception, Type expected)
-    {
-        // act
-        var ex = Assert.Catch(() => new MtProblemDetails(exception));
-
-        // assert
-        Assert.That(ex.GetType().Name, Is.EqualTo(expected.Name));
+        details.ToString().Should().Be(expected);
     }
 }

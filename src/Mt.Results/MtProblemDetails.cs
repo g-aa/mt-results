@@ -1,7 +1,7 @@
-using Mt.Utilities;
+using System.Text.Json.Serialization;
+
 using Mt.Utilities.Exceptions;
 using Mt.Utilities.Extensions;
-using System.Text.Json.Serialization;
 
 namespace Mt.Results;
 
@@ -11,6 +11,48 @@ namespace Mt.Results;
 [Serializable]
 public sealed class MtProblemDetails
 {
+    /// <summary>
+    /// Инициализация экземпляра класса <see cref="MtProblemDetails"/>.
+    /// </summary>
+    /// <remarks>По умолчанию генерирует ответ Title: MT-0001;  Description: Внутренняя ошибка логики приложения.</remarks>
+    public MtProblemDetails()
+    {
+        var code = ErrorCode.InternalLogicError;
+        Title = code.Title();
+        Description = code.Desc();
+    }
+
+    /// <summary>
+    /// Инициализация экземпляра класса <see cref="MtProblemDetails"/>.
+    /// </summary>
+    /// <param name="code">Код ошибки.</param>
+    public MtProblemDetails(ErrorCode code)
+    {
+        Title = code.Title();
+        Description = code.Desc();
+    }
+
+    /// <summary>
+    /// Инициализация экземпляра класса <see cref="MtProblemDetails"/>.
+    /// </summary>
+    /// <param name="title">Заголовок.</param>
+    /// <param name="description">Описание.</param>
+    public MtProblemDetails(string title, string description)
+    {
+        Title = title;
+        Description = description;
+    }
+
+    /// <summary>
+    /// Инициализация экземпляра класса <see cref="MtProblemDetails"/>.
+    /// </summary>
+    /// <param name="exception">Исключение.</param>
+    public MtProblemDetails(MtBaseException exception)
+    {
+        Title = exception.Title;
+        Description = exception.Desc;
+    }
+
     /// <summary>
     /// Заголовок (код ошибки).
     /// </summary>
@@ -25,52 +67,9 @@ public sealed class MtProblemDetails
     [JsonPropertyName("desc")]
     public string Description { get; private set; }
 
-    /// <summary>
-    /// Инициализация экземпляра класса <see cref="MtProblemDetails"/>.
-    /// </summary>
-    /// <remarks>По умолчанию генерирует ответ Title: MT-0001;  Description: Внутренняя ошибка логики приложения.</remarks>
-    public MtProblemDetails()
-    {
-        var code = ErrorCode.InternalLogicError;
-        this.Title = code.Title();
-        this.Description = code.Desc();
-    }
-
-    /// <summary>
-    /// Инициализация экземпляра класса <see cref="MtProblemDetails"/>.
-    /// </summary>
-    /// <param name="code">Код ошибки.</param>
-    public MtProblemDetails(ErrorCode code)
-    {
-        this.Title = code.Title();
-        this.Description = code.Desc();
-    }
-
-    /// <summary>
-    /// Инициализация экземпляра класса <see cref="MtProblemDetails"/>.
-    /// </summary>
-    /// <param name="title">Заголовок.</param>
-    /// <param name="description">Описание.</param>
-    public MtProblemDetails(string title, string description)
-    {
-        this.Title = Check.NotEmpty(title, nameof(title));
-        this.Description = Check.NotEmpty(description, nameof(description));
-    }
-
-    /// <summary>
-    /// Инициализация экземпляра класса <see cref="MtProblemDetails"/>.
-    /// </summary>
-    /// <param name="exception">Исключение.</param>
-    public MtProblemDetails(MtBaseException exception)
-    {
-        Check.NotNull(exception, nameof(exception));
-        this.Title = exception.Title;
-        this.Description = exception.Desc;
-    }
-
     /// <inheritdoc />
     public override string ToString()
     {
-        return $"{this.Title}: {this.Description}";
+        return $"{Title}: {Description}";
     }
 }
