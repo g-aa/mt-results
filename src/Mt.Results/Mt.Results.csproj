@@ -1,9 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <IsPackable>true</IsPackable>
     <PackageId>Mt.Results</PackageId>
     <PackageTags>Mt;Net;Utilities;Results;</PackageTags>
-    <Description>Стандартные ответы результатов операций используемые в проектах Mt Rele.</Description>
+    <Description>Стандартные ответы результатов операций используемые в проектах Mt Relay.</Description>
     <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)mt-results.snk</AssemblyOriginatorKeyFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -13,7 +14,6 @@
     <None Include="..\..\iconMt.png" Pack="true" PackagePath="\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Mt.Utilities" Version="6.3.0" />
-    <PackageReference Include="System.Text.Json" Version="7.0.3" />
+    <PackageReference Include="Mt.Utilities" Version="8.1.0" />
   </ItemGroup>
 </Project>

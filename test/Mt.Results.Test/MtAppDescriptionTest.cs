@@ -19,7 +19,7 @@ public sealed class MtAppDescriptionTest
         var copyright = $"НТЦ Механотроники 1993 – {DateTime.Now:yyyy}.";
 
         // act
-        var result = new MtAppDescription()
+        var result = new MtAppDescription
         {
             Version = version,
             Description = desc,
@@ -27,7 +27,7 @@ public sealed class MtAppDescriptionTest
         };
 
         // assert
-        Assert.That(result.Copyright, Is.EqualTo(copyright));
+        result.Copyright.Should().Be(copyright);
     }
 
     /// <summary>
@@ -44,7 +44,7 @@ public sealed class MtAppDescriptionTest
         var toString = $"{version}; {copyright}; {repository}.";
 
         // act
-        var result = new MtAppDescription()
+        var result = new MtAppDescription
         {
             Version = version,
             Description = desc,
@@ -52,6 +52,6 @@ public sealed class MtAppDescriptionTest
         };
 
         // assert
-        Assert.That(result.ToString(), Is.EqualTo(toString));
+        result.ToString().Should().Be(toString);
     }
 }
