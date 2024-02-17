@@ -9,6 +9,17 @@ namespace Mt.Results;
 public sealed class MtAppDescription
 {
     /// <summary>
+    /// Инициализация экземпляра класса <see cref="MtAppDescription"/>.
+    /// </summary>
+    public MtAppDescription()
+    {
+        Version = string.Empty;
+        Description = string.Empty;
+        Copyright = $"НТЦ Механотроники 1993 – {DateTime.Now:yyyy}.";
+        Repository = string.Empty;
+    }
+
+    /// <summary>
     /// Версия приложения (Mt-ApplicationName: vX.X.X.X).
     /// </summary>
     /// <example>Mt-ApplicationName: v0.0.0.0</example>
@@ -25,10 +36,9 @@ public sealed class MtAppDescription
     /// <summary>
     /// Авторские права.
     /// </summary>
-    /// <example>НТЦ Механотроники 1993 – 2022.</example>
+    /// <example>НТЦ Механотроники 1993 – 2024.</example>
     [JsonPropertyName("copyright")]
     public string Copyright { get; set; }
-
 
     /// <summary>
     /// Ссылка на репозиторий.
@@ -37,20 +47,9 @@ public sealed class MtAppDescription
     [JsonPropertyName("repository")]
     public string Repository { get; set; }
 
-    /// <summary>
-    /// Инициализация экземпляра класса <see cref="MtAppDescription"/>.
-    /// </summary>
-    public MtAppDescription()
-    {
-        this.Version = string.Empty;
-        this.Description = string.Empty;
-        this.Copyright = $"НТЦ Механотроники 1993 – {DateTime.Now:yyyy}.";
-        this.Repository = string.Empty;
-    }
-
     /// <inheritdoc />
     public override string ToString()
     {
-        return $"{this.Version}; {this.Copyright}; {this.Repository}.";
+        return $"{Version}; {Copyright}; {Repository}.";
     }
 }
