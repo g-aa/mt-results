@@ -1,19 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net8.0</TargetFrameworks>
+    <TargetFramework>net8.0</TargetFramework>
+    <Description>Стандартные ответы результатов операций используемые в проектах Mt Relay.</Description>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IsPackable>true</IsPackable>
     <PackageId>Mt.Results</PackageId>
-    <PackageTags>Mt;Net;Utilities;Results;</PackageTags>
-    <Description>Стандартные ответы результатов операций используемые в проектах Mt Relay.</Description>
-    <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)mt-results.snk</AssemblyOriginatorKeyFile>
+    <PackageTags>Mt;Net;Utilities;Results</PackageTags>
+    <PackageProjectUrl>https://github.com/g-aa/mt-results</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>iconMt.png</PackageIcon>
+    <PackageVersion>$(Build_Version)</PackageVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <None Include="..\..\README.md" Pack="true" PackagePath="\" />
     <None Include="..\..\iconMt.png" Pack="true" PackagePath="\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Mt.Utilities" Version="8.1.0" />
+    <PackageReference Include="Mt.Utilities" Version="8.1.1" />
   </ItemGroup>
 </Project>
